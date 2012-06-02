@@ -1,0 +1,51 @@
+body #reveal .slides {
+  width : 1024px;
+  margin-left : -512px;
+  text-align: left;
+}
+
+#reveal pre code {
+  font-size : 34px;
+  line-height : 38px;
+}
+
+#reveal pre.thin {
+  width: 67%;
+}
+
+#reveal .oneliner {
+  padding-top : 15%;
+  font-size : 1.4em;
+}
+
+#reveal .oneliner h3 {
+  line-height: 1;
+}
+
+body #reveal em {
+  font-style : normal;
+  font-size : 1.2em;
+  color : #A6E22E;
+}
+
+body #reveal .oneliner em {
+  text-transform : uppercase;
+  font-weight : bold;
+}
+
+#reveal h1, 
+#reveal h2,
+#reveal h3,
+#reveal h4 {
+  font-family: 'Oswald', sans-serif;
+  line-height: 1.1em;
+  font-weight: bold;
+  text-transform: none;
+}
+
+#reveal h1 { font-size: 100px;  }
+#reveal h2 { font-size: 76px; }
+#reveal h3 { font-size: 56px; }
+#reveal h4 { font-size: 36px; }
+
+#reveal .slides .title-slide
