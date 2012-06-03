@@ -20,17 +20,7 @@
 
     <link rel="stylesheet" href="css/zenburn.css">
     <link rel="stylesheet" href="css/rm.css">
-    <style>
-    html {
-      background:
-        radial-gradient(black 15%, transparent 16%) 0 0,
-        radial-gradient(black 15%, transparent 16%) 8px 8px,
-        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-      background-color:#282828;
-      background-size:16px 16px;
-    }
-    </style>
+
     <!-- fwiw: i'm not in love with client-side prefix fixing, 
     but i'm doing it here for the sake of worrying about other things.
     thanks to lea verou for making this available. -->
@@ -46,12 +36,87 @@
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-        <section class="title-slide">
-          <h1>A New Baseline <br/>for Front-End Developers</h1>
+        <section>
+          <section data-markdown>
+            <img src="img/line-in-the-sand.jpg" alt="" style="margin-bottom: 50px">
+
+            ## A New Baseline <br/>for Front-End Developers
+            
+            Rebecca Murphey&nbsp;&nbsp;☆&nbsp;&nbsp;TXJS
+          </section>
+
+          <section class="centered oneliner" data-markdown>
+            <p><img src="img/bocoup.png" class="clean" alt="Bocoup" height="300"></p>
+
+            [@rmurphey](http://twitter.com/rmurphey)&nbsp;&nbsp;☆&nbsp;&nbsp;[rmurphey.com](http://rmurphey.com)&nbsp;&nbsp;☆&nbsp;&nbsp;[bocoup.com](http://bocoup.com)
+          </section>
+
+          <section class="centered">
+            <iframe src="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/" width="1024" height="700"></iframe>
+          </section>
+
+          <section class="centered">
+            <img src="img/lynx.png" class="clean" alt="Lynx" width="800">
+          </section>
+
+          <section class="centered">
+            <img src="img/yahoo.png" class="clean" alt="Yahoo!" width="600">
+          </section>
+
+          <section class="centered">
+            <iframe style="background-color: white" src="http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/" width="1024" height="700"></iframe>
+          </section>
+
+          <section class="centered">
+            <img src="img/gmail.png" class="clean" alt="Google Gmail" width="600" style="display: block; position: absolute; top: 0; left: 0; z-index: 1">
+            <img src="img/gmaps.png" class="clean" alt="Google Maps" width="500" style="display: block; position: absolute; top: 150px; left: 400px; z-index: 1">
+          </section>
+
+          <section class="centered">
+            <img src="img/jquery.jpg" class="clean" alt="jQuery Logo" width="500" style="margin-top: 150px">
+          </section>
+
+          <section class="centered">
+            <img src="img/etherpad.jpg" class="clean" alt="Etherpad" width="800">
+          </section>
+
+          <section class="centered">
+            <img src="img/facebook.png" class="clean" alt="Facebook" width="800">
+          </section>
+
+          <section class="centered">
+            <img src="img/yahoo.png" class="clean" alt="Yahoo!" width="600">
+          </section>
+
+          <section class="centered oneliner">
+            <img src="img/birdhouse.jpg" class="clean" alt="Birdhouse">
+          </section>
+
+          <section class="centered">
+            <img src="img/facebook.png" class="clean" alt="Facebook" width="800">
+          </section>
+
+          <section class="centered">
+            <img src="img/skyscraper.jpg" class="clean" alt="Skyscraper" height="700">
+          </section>
+
+          <section class="centered oneliner">
+            Our emphasis shifts from trivia to tools <br>
+            as we are required to automate, streamline,<br> 
+            and bullet-proof our processes.
+          </section>
+
+          <section data-markdown class="centered oneliner">
+            ## [bit.ly/front-end-dev-baseline](http://bit.ly/front-end-dev-baseline)
+          </section>
         </section>
 
         <section>
-          <h1>Another slide</h1>
+          <section>
+          </section>
+        </section>
+
+        <section>
         </section>
       </div>
 
@@ -104,7 +169,7 @@
     loop: false,
 
     // Flags if mouse wheel navigation should be enabled
-    mouseWheel: true,
+    mouseWheel: false,
 
     // Apply a 3D roll to links on hover
     rollingLinks: true,
@@ -113,7 +178,7 @@
     theme: query.theme || 'default', // default/neon
 
     // Transition style
-    transition: query.transition || 'concave' // default/cube/page/concave/linear(2d)
+    transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
     });
 
     hljs.initHighlightingOnLoad();

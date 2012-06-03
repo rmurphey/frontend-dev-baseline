@@ -1,6 +1,17 @@
+html {
+  background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
+}
+
 body #reveal .slides {
   width : 1024px;
   margin-left : -512px;
+  margin-top: -400px;
   text-align: left;
 }
 
@@ -22,7 +33,7 @@ body #reveal .slides {
   line-height: 1;
 }
 
-body #reveal em {
+body #reveal em 
   font-style : normal;
   font-size : 1.2em;
   color : #A6E22E;
@@ -31,6 +42,10 @@ body #reveal em {
 body #reveal .oneliner em {
   text-transform : uppercase;
   font-weight : bold;
+}
+
+#reveal {
+  font-family: 'Oswald', sans-serif;
 }
 
 #reveal h1, 
@@ -48,4 +63,11 @@ body #reveal .oneliner em {
 #reveal h3 { font-size: 56px; }
 #reveal h4 { font-size: 36px; }
 
-#reveal .slides .title-slide
+#reveal section img.clean {
+  border: 0;
+  background: none;
+}
+
+.centered {
+  text-align: center;
+}
