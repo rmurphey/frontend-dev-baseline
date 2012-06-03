@@ -7,8 +7,8 @@ based on dark.css by Ivan Sagalaev
 
 pre code {
   display: block; padding: 0.5em;
-  background: #C0C0C0;
-  color: #232323;
+  background: #3F3F3F;
+  color: #DCDCDC;
 }
 
 pre .keyword,
@@ -18,25 +18,25 @@ pre .django .keyword,
 pre .css .class,
 pre .css .id,
 pre .lisp .title {
-  color: #1C3154;
+  color: #E3CEAB;
 }
 
 pre .django .template_tag,
 pre .django .variable,
 pre .django .filter .argument {
-  color: #232323;
+  color: #DCDCDC;
 }
 
 pre .number,
 pre .date {
-  color: #732F2C;
+  color: #8CD0D3;
 }
 
 pre .dos .envvar,
 pre .dos .stream,
 pre .variable,
 pre .apache .sqbracket {
-  color: #102343;
+  color: #EFDCBC;
 }
 
 pre .dos .flow,
@@ -45,12 +45,12 @@ pre .python .exception,
 pre .python .built_in,
 pre .literal,
 pre .tex .special {
-  color: #101050;
+  color: #EFEFAF;
 }
 
 pre .diff .chunk,
 pre .ruby .subst {
-  color: #707070;
+  color: #8F8F8F;
 }
 
 pre .dos .keyword,
@@ -65,7 +65,7 @@ pre .apache .tag,
 pre .nginx .built_in,
 pre .tex .command,
 pre .input_number {
-    color: #101070;
+    color: #efef8f;
 }
 
 pre .dos .winutils,
@@ -75,7 +75,7 @@ pre .ruby .symbol .keyword,
 pre .ruby .symbol .keymethods,
 pre .ruby .string,
 pre .ruby .instancevar {
-  color: #235C5C;
+  color: #DCA3A3;
 }
 
 pre .diff .deletion,
@@ -93,7 +93,7 @@ pre .attr_selector,
 pre .pseudo,
 pre .apache .cbracket,
 pre .tex .formula {
-  color: #336C6C;
+  color: #CC9393;
 }
 
 pre .shebang,
@@ -103,12 +103,14 @@ pre .java .annotation,
 pre .template_comment,
 pre .pi,
 pre .doctype {
-  color: #806080;
+  color: #7F9F7F;
 }
 
+pre .coffeescript .javascript,
 pre .xml .css,
 pre .xml .javascript,
 pre .xml .vbscript,
 pre .tex .formula {
   opacity: 0.5;
 }
+

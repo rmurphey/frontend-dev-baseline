@@ -11,13 +11,17 @@ html {
 body #reveal .slides {
   width : 1024px;
   margin-left : -512px;
-  margin-top: -400px;
+  margin-top: -420px;
   text-align: left;
 }
 
+#reveal pre {
+  width: 100%;
+}
+
 #reveal pre code {
-  font-size : 34px;
-  line-height : 38px;
+  font-size : 18px;
+  line-height : 24px;
 }
 
 #reveal pre.thin {
@@ -31,12 +35,6 @@ body #reveal .slides {
 
 #reveal .oneliner h3 {
   line-height: 1;
-}
-
-body #reveal em 
-  font-style : normal;
-  font-size : 1.2em;
-  color : #A6E22E;
 }
 
 body #reveal .oneliner em {
@@ -63,11 +61,33 @@ body #reveal .oneliner em {
 #reveal h3 { font-size: 56px; }
 #reveal h4 { font-size: 36px; }
 
-#reveal section img.clean {
+#reveal img.clean {
   border: 0;
   background: none;
 }
 
-.centered {
+#reveal .centered {
   text-align: center;
+}
+
+#reveal em {
+  color: hsl(329, 88%, 50%);
+  font-style: normal;
+}
+
+#reveal blockquote {
+  font-style: normal;
+  line-height: 1.2em;
+  padding: 40px;
+  width: 85%;
+}
+
+#reveal cite {
+  font-size: 50%;
+  font-weight: 400;
+}
+
+#reveal p + h2, 
+#reveal p + h3 {
+  margin-top: 80px;
 }
