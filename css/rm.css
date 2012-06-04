@@ -11,7 +11,7 @@ html {
 body #reveal .slides {
   width : 1024px;
   margin-left : -512px;
-  margin-top: -420px;
+  margin-top: -350px;
   text-align: left;
 }
 
@@ -43,23 +43,30 @@ body #reveal .oneliner em {
 }
 
 #reveal {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Signika', sans-serif;
+  font-weight: 300;
 }
 
 #reveal h1, 
 #reveal h2,
 #reveal h3,
 #reveal h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Signika', sans-serif;
   line-height: 1.1em;
   font-weight: bold;
   text-transform: none;
+  letter-spacing: 0em;
 }
 
-#reveal h1 { font-size: 100px;  }
-#reveal h2 { font-size: 76px; }
-#reveal h3 { font-size: 56px; }
-#reveal h4 { font-size: 36px; }
+#reveal h1 { font-size: 100px; margin-bottom: 50px; }
+#reveal h2 { font-size: 50px; font-weight: 600; }
+#reveal h3 { font-size: 36px; font-weight: 600; }
+#reveal h4 { font-size: 20px; font-weight: 600; }
+
+#reveal .title-slide h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
 
 #reveal img.clean {
   border: 0;
@@ -90,4 +97,8 @@ body #reveal .oneliner em {
 #reveal p + h2, 
 #reveal p + h3 {
   margin-top: 80px;
+}
+
+#reveal p {
+  font-weight: 300;
 }

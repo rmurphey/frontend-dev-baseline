@@ -11,8 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- link href='css/fonts.css' rel='stylesheet' type='text/css' -->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Signika:400,600,700,300' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="lib/reveal/reveal.css">
@@ -38,10 +37,10 @@
       <div class="slides">
         <!-- intro -->
         <section>
-          <section data-markdown>
+          <section data-markdown class="title-slide">
             <img src="img/line-in-the-sand.jpg" alt="" width="500">
 
-            ## A New Baseline <br/>for Front-End Developers
+            # A New Baseline <br/>for Front-End Developers
             
             Rebecca Murphey&nbsp;&nbsp;☆&nbsp;&nbsp;TXJS&nbsp;&nbsp;☆&nbsp;&nbsp;June 2012
           </section>
@@ -64,8 +63,10 @@
             <img src="img/yahoo.png" class="clean" alt="Yahoo!" width="600">
           </section>
 
-          <section class="centered">
-            <iframe style="background-color: white" src="http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/" width="1024" height="700"></iframe>
+          <section data-markdown>
+            <iframe style="background-color: white" src="http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/" width="1024" height="600"></iframe>
+
+            [An Objective Look at Table-Based vs CSS-Based Design](http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/)
           </section>
 
           <section class="centered">
@@ -116,9 +117,7 @@
         <section>
           <section data-markdown>
             # javascript
-          </section>
 
-          <section data-markdown>
             ## you already know
 
             jQuery, underscore, basic JavaScript
@@ -130,13 +129,13 @@
           </section>
 
           <section data-markdown>
-            ### js-assessment
+            ## js-assessment
 
             <p class="centered"><img src="img/js-assessment.png" width="800" class="clean"></p>
           </section>
 
           <section data-markdown>
-            ### js-assessment
+            ## js-assessment
             <pre>
               <code class="javascript">
 it("you should be able to determine the location of an item in an array", function() {
@@ -167,61 +166,201 @@ it("you should be able to add an item to the end of an array", function() {
 
         <section>
           <section data-markdown>
-            ## git & github
+            # git & github
+
+            ## you already know
+
+            creating a new repo, cloning a repo, branching and merging locally
+
+            ## you should know
+
+            collaboration workflow, pull requests, code reviews
+          </section>
+
+          <section class="centered">
+            <img src="img/git-workflow.png" height="600" alt="git workflow">
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## modularity & builds
+            # modularity & builds
+
+            ## you already know
+
+            to keep scripts out of your `head`
+            to limit the number of http requests
+            to reduce http overhead via minification
+
+            ## you should know
+
+            AMD, RequireJS/Almond, UglifyJS, Closure Compiler
+          </section>
+
+          <section>
+            <iframe src="http://requirejs.org" width="1024" height="700"></iframe>
+          </section>
+
+          <section>
+            <pre>
+              <code class="javascript">
+({
+  baseUrl : 'app',
+  dir : 'prod',
+  paths : {
+    lib : '../lib',
+    plugins : '../lib/plugins',
+    app : '.',
+
+    jquery : '../lib/jquery',
+    underscore : '../lib/underscore',
+    backbone : '../lib/backbone',
+
+    use : '../lib/plugins/use',
+    text : '../lib/plugins/text'
+  },
+
+  use : {
+    underscore : {
+      attach : '_'
+    },
+    backbone : {
+      deps : [ 'use!underscore', 'jquery' ],
+      attach : [ 'Backbone' ]
+    }
+  },
+
+  modules : [
+    {
+      name : 'app/main'
+    }
+  ]
+})
+              </code>
+            </pre>
+          </section>
+
+          <section data-markdown>
+            ## before requirejs
+
+            <p class="centered">
+              <img src="img/unbuilt.png" width="800" class="clean">
+            </p>
+          </section>
+
+          <section data-markdown>
+            ## after requirejs
+
+            <p class="centered">
+              <img src="img/built.png" width="800" class="clean">
+            </p>
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## dev tools
+            # dev tools
+
+            ## you already know
+
+            `console.log`, `console.dir`, editing CSS, the Network tab,
+            Firebug or Chrome dev tools
+
+            ## you should know
+
+            breakpoints & step debugging, `$0`, timelines & profiles,
+            other browsers
+          </section>
+
+          <section data-markdown>
+            <div class="centered">
+              <iframe width="1024" height="480" src="http://www.youtube.com/embed/nOEw9iiopwI" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            [Chrome Developer Tools: 12 Tricks](http://www.youtube.com/embed/nOEw9iiopwI)
+
+          </section>
+
+          <section data-markdown>
+            <iframe width="1024" height="600" src="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints"></iframe>
+
+            [Chrome Developer Tools Docs: Breakpoints](https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints)
+          </section>
+
+          <section data-markdown>
+            <iframe width="1024" height="600" src="http://my.opera.com/dragonfly/blog/" frameborder="0" allowfullscreen></iframe>
+
+            [Opera Dragonfly](http://my.opera.com/dragonfly/blog/)
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## command line
+            # command line
+
+            <blockquote>Is it <em>unreasonable to ask for a GUI</em>
+              so that whatever I’m doing works like all 
+              the other programs I use all day?</blockquote>
+            <cite>Dark_Prism on Reddit</cite>
+
+            <blockquote>Now you can berate me for not understanding 
+              the Terminal if you like, but I’ll trade your rubygems 
+              for my under-colour removal and dot gain, any day 
+              of the week. <em>How hard should this be?</em></blockquote>
+            <cite>Andy Clarke, author of “Hardboiled Web Design”</cite>
+          </section>
+
+          <section data-markdown>
+            ## you already know
+
+            either the command line is amazing, 
+            or the command line is terrifying
+
+            ## you should know
+
+            ack, ssh, find, curl, git, npm; 
+            creating aliases for commonly used commands
+          </section>
+
+          <section data-markdown class="centered">
+            <a href="https://github.com/gf3/dotfiles/"><img src="img/dotfiles.png" width="1024" class="clean"></a>
+          </section>
+
+        </section>
+
+        <section>
+          <section data-markdown>
+            # templates
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## templates
+            # css
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## css
+            # testing
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## testing
+            # automation
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## automation
+            # code quality
           </section>
         </section>
 
         <section>
           <section data-markdown>
-            ## code quality
-          </section>
-        </section>
-
-        <section>
-          <section data-markdown>
-            ## docs
+            # docs
           </section>
         </section>
 
@@ -261,7 +400,7 @@ it("you should be able to add an item to the end of an array", function() {
     </div>
 
     <script src="lib/reveal/reveal.js"></script>
-    <script src="lib/highlight/highlight.js"></script>
+    <script src="lib/highlight/highlight.pack.js"></script>
     <script src="lib/classList.js"></script>
 
     <script>
