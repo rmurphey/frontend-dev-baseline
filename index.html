@@ -164,6 +164,7 @@ it("you should be able to add an item to the end of an array", function() {
           </section>
         </section>
 
+        <!-- git & github -->
         <section>
           <section data-markdown>
             # git & github
@@ -182,6 +183,7 @@ it("you should be able to add an item to the end of an array", function() {
           </section>
         </section>
 
+        <!-- modularity & builds -->
         <section>
           <section data-markdown>
             # modularity & builds
@@ -240,6 +242,10 @@ it("you should be able to add an item to the end of an array", function() {
             </pre>
           </section>
 
+          <section class="oneliner centered" data-markdown>
+            `r.js -o your.build.js`
+          </section>
+
           <section data-markdown>
             ## before requirejs
 
@@ -257,6 +263,7 @@ it("you should be able to add an item to the end of an array", function() {
           </section>
         </section>
 
+        <!-- dev tools -->
         <section>
           <section data-markdown>
             # dev tools
@@ -294,6 +301,7 @@ it("you should be able to add an item to the end of an array", function() {
           </section>
         </section>
 
+        <!-- command line -->
         <section>
           <section data-markdown>
             # command line
@@ -325,39 +333,113 @@ it("you should be able to add an item to the end of an array", function() {
           <section data-markdown class="centered">
             <a href="https://github.com/gf3/dotfiles/"><img src="img/dotfiles.png" width="1024" class="clean"></a>
           </section>
-
         </section>
 
+        <!-- templates -->
         <section>
           <section data-markdown>
             # templates
+
+            ## you already know
+
+            to send data, not HTML, from the server; 
+            to build HTML as a string & insert it into the DOM all at once*
+
+            ## you should know
+
+            various templating libraries & tradeoffs,  
+            the RequireJS `text!` plugin
+          </section>
+
+          <section data-markdown>
+            <iframe src="http://garann.github.com/template-chooser/" width="1024" height="600"></iframe>
+
+            [Garann Means' Template Chooser](http://garann.github.com/template-chooser/)
           </section>
         </section>
 
+        <!-- css -->
         <section>
           <section data-markdown>
             # css
+
+            ## you already know
+
+            that CSS is difficult to maintain, 
+            that you should be modularizing your CSS, 
+            that you should combine & minify CSS for production
+
+            ## you should know
+
+            SASS, Stylus, and/or LESS; 
+            RequireJS  for plain CSS optimization
+          </section>
+
+          <section data-markdown>
+            <pre class="thin large">
+              <code class="css">
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+  
+body
+  font 12px Helvetica, Arial, sans-serif
+  
+a.button
+  border-radius(5px)
+              </code>
+            </pre>
+
+            [Stylus](http://learnboost.github.com/stylus/)
+          </section>
+
+          <section data-markdown>
+            <pre class="thin large">
+              <code class="css">
+$blue: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  color:
+    darken($blue, 9%);
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}
+              </code>
+            </pre>
+
+            [Sass](http://sass-lang.com/)
           </section>
         </section>
 
+        <!-- testing -->
         <section>
           <section data-markdown>
             # testing
           </section>
         </section>
 
+        <!-- automation -->
         <section>
           <section data-markdown>
             # automation
           </section>
         </section>
 
+        <!-- code quality -->
         <section>
           <section data-markdown>
             # code quality
           </section>
         </section>
 
+        <!-- docs -->
         <section>
           <section data-markdown>
             # docs

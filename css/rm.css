@@ -28,6 +28,11 @@ body #reveal .slides {
   width: 67%;
 }
 
+#reveal pre.large code {
+  font-size: 24px;
+  line-height: 30px;
+}
+
 #reveal .oneliner {
   padding-top : 15%;
   font-size : 1.4em;
