@@ -24,6 +24,11 @@ body #reveal .slides {
   line-height : 24px;
 }
 
+#reveal pre code .code-highlight {
+  display: inline-block;
+  background-color: yellow;
+}
+
 #reveal pre.thin {
   width: 67%;
 }
@@ -106,4 +111,28 @@ body #reveal .oneliner em {
 
 #reveal p {
   font-weight: 300;
+}
+
+#reveal img.book {
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.8);
+}
+
+#reveal img.book-1 {
+  transform: rotate(3deg);
+}
+
+#reveal img.book-2 {
+  transform: rotate(-3deg);
+}
+
+#reveal img.book-3 {
+  transform: rotate(5deg);
+}
+
+#reveal img.book-4 {
+  transform: rotate(-3deg);
+}
+
+#reveal aside.notes {
+  display: none;
 }
