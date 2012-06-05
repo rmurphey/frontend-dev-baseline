@@ -1,0 +1,18 @@
+{
+  "author": "Rebecca Murphey <rmurphey@gmail.com> (http://rmurphey.com)",
+  "name": "txjs2012",
+  "description": "TXJS2012 Slideware",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rmurphey/frontend-dev-baseline.git"
+  },
+  "engines": {
+    "node": "~0.6.8"
+  },
+  "dependencies": {
+    "express" : "2.5.9",
+    "socket.io" : "0.9.6"
+  },
+  "devDependencies": {}
+}
