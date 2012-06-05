@@ -636,23 +636,27 @@ $margin: 16px;
     <script src="lib/reveal/reveal.js"></script>
     <script src="lib/highlight/highlight.pack.js"></script>
     <script src="lib/classList.js"></script>
+    <script src="socket.io/socket.io.js"></script>
 
     <script>
-      // Parse the query string into a key/value object
     var query = {};
+    var socket = io.connect('http://localhost:1947');
 
-    var handleCurrentSlide = function(slideElement) {
+    var handleCurrentSlide = function(slideElement, event) {
+      var notes = slideElement.querySelector('aside.notes');
+      var slideData = {
+        notes : notes ? notes.innerHTML : '',
+        indexh : event.indexh,
+        indexv : event.indexv
+      };
 
+      console.log(slideData); 
+      socket.emit('slidechanged', slideData);
     };
 
     location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
         query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
         } );
-
-    // Fires when a slide with data-state=customevent is activated
-    Reveal.addEventListener( 'customevent', function() {
-      alert( '"customevent" has fired' );
-    } );
 
     // Fires each time a new slide is activated
     Reveal.addEventListener( 'slidechanged', function( event ) {
@@ -663,7 +667,7 @@ $margin: 16px;
         selector += ' > section:nth-child(' + (event.indexv + 1) + ')';
       }
 
-      handleCurrentSlide(document.querySelector(selector));
+      handleCurrentSlide(document.querySelector(selector), event);
     } );
 
     Reveal.initialize({

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Slide Notes</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Rebecca Murphey">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  </head>
+
+  <body>
+
+    <script src="socket.io/socket.io.js"></script>
+
+    <script>
+    var socket = io.connect('http://localhost:1947');
+
+    console.log('got socket', socket);
+
+    socket.on('slidedata', function(data) {
+      console.log(data);
+    });
+    </script>
+
+  </body>
+</html>
