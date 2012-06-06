@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="lib/highlight/styles/solarized_light.css">
     <link rel="stylesheet" href="css/rm.css">
 
-    <!-- fwiw: i'm not in love with client-side prefix fixing, 
+    <!-- fwiw: i'm not in love with client-side prefix fixing,
     but i'm doing it here for the sake of worrying about other things.
     thanks to lea verou for making this available. -->
     <script src="js/prefixfree.js"></script>
@@ -41,7 +41,7 @@
             <img src="img/line-in-the-sand.jpg" alt="" width="500">
 
             # A New Baseline <br/>for Front-End Developers
-            
+
             Rebecca Murphey&nbsp;&nbsp;☆&nbsp;&nbsp;TXJS&nbsp;&nbsp;☆&nbsp;&nbsp;June 2012
           </section>
 
@@ -56,12 +56,12 @@
 
             <aside class="notes">
               want to talk about a post i just wrote about a “new baseline for front-end devs”
-              
-              about how the demands on front-end devs have changed over the years. 
-              
+
+              about how the demands on front-end devs have changed over the years.
+
               this post inspired an odd amount of controversy
-              
-              i think in a year or two, people who don’t know these things won’t be able to keep calling themselves FEDs.  
+
+              i think in a year or two, people who don’t know these things won’t be able to keep calling themselves FEDs.
             </aside>
           </section>
 
@@ -167,9 +167,9 @@
             and bullet-proof our processes.
 
             <aside class="notes">
-              it’s (past) time for front end devs to become better versed in software dev. 
+              it’s (past) time for front end devs to become better versed in software dev.
 
-              we’re building skyscrapers. 
+              we’re building skyscrapers.
             </aside>
           </section>
 
@@ -179,11 +179,11 @@
             <aside class="notes">
               everything i talk about is on my pinboard.
 
-              this talk is less about teaching new things, and more about teaching you what to learn. 
+              this talk is less about teaching new things, and more about teaching you what to learn.
 
-              if you already know all this, you should probably be getting paid more. 
+              if you already know all this, you should probably be getting paid more.
 
-              if you don’t know all this, learn it, and you will get paid more. 
+              if you don’t know all this, learn it, and you will get paid more.
 
               disclaimer: these are the specific tools *i* like. you don’t need to use them.
             </aside>
@@ -386,13 +386,13 @@ require.config({
             # command line
 
             <blockquote>Is it <em>unreasonable to ask for a GUI</em>
-              so that whatever I’m doing works like all 
+              so that whatever I’m doing works like all
               the other programs I use all day?</blockquote>
             <cite>Dark_Prism on Reddit</cite>
 
-            <blockquote>Now you can berate me for not understanding 
-              the Terminal if you like, but I’ll trade your rubygems 
-              for my under-colour removal and dot gain, any day 
+            <blockquote>Now you can berate me for not understanding
+              the Terminal if you like, but I’ll trade your rubygems
+              for my under-colour removal and dot gain, any day
               of the week. <em>How hard should this be?</em></blockquote>
             <cite>Andy Clarke, author of “Hardboiled Web Design”</cite>
           </section>
@@ -400,12 +400,12 @@ require.config({
           <section data-markdown>
             ## you already know
 
-            either the command line is amazing, 
+            either the command line is amazing,
             or the command line is terrifying
 
             ## you should know
 
-            ack, ssh, find, curl, git, npm; 
+            ack, ssh, find, curl, git, npm;
             creating aliases for commonly used commands
           </section>
 
@@ -421,7 +421,7 @@ require.config({
 
             ## you already know
 
-            to send data, not HTML, from the server; 
+            to send data, not HTML, from the server;
             to build HTML as a string & insert it into the DOM all at once*
 
             ## you should know
@@ -488,13 +488,13 @@ define([
 
             ## you already know
 
-            that CSS is difficult to maintain, 
-            that you should be modularizing your CSS, 
+            that CSS is difficult to maintain,
+            that you should be modularizing your CSS,
             that you should combine & minify CSS for production
 
             ## you should know
 
-            SASS, Stylus, and/or LESS; 
+            SASS, Stylus, and/or LESS;
             RequireJS  for plain CSS optimization
           </section>
 
@@ -505,10 +505,10 @@ border-radius()
   -webkit-border-radius arguments
   -moz-border-radius arguments
   border-radius arguments
-  
+
 body
   font 12px Helvetica, Arial, sans-serif
-  
+
 a.button
   border-radius(5px)
               </code>
@@ -545,7 +545,7 @@ $margin: 16px;
             <div class="oval-marker fragment">This is a lie</div>
 
             [LESS](http://lesscss.org/)
-          </section> 
+          </section>
         </section>
 
         <!-- testing -->
@@ -555,7 +555,7 @@ $margin: 16px;
 
             ## you already know
 
-            you should be testing your code, 
+            you should be testing your code,
             but it’s  hard to know where to start
 
             ## you should know
@@ -577,7 +577,7 @@ $margin: 16px;
           </section>
 
           <section data-markdown class="oneliner">
-            We *desperately* need more resources 
+            We *desperately* need more resources
             to teach people how to get started with testing.
           </section>
         </section>
@@ -671,11 +671,24 @@ $margin: 16px;
     var handleCurrentSlide = function(slideElement, event) {
       if (query.socketless) { return; }
 
+      var nextindexh;
+      var nextindexv;
+
+      if (slideElement.nextElementSibling && slideElement.parentNode.nodeName == 'SECTION') {
+        nextindexh = event.indexh;
+        nextindexv = event.indexv + 1;
+      } else {
+        nextindexh = event.indexh + 1;
+        nextindexv = 0;
+      }
+
       var notes = slideElement.querySelector('aside.notes');
       var slideData = {
         notes : notes ? notes.innerHTML : '',
         indexh : event.indexh,
-        indexv : event.indexv
+        indexv : event.indexv,
+        nextindexh : nextindexh,
+        nextindexv : nextindexv
       };
 
       socket.emit('slidechanged', slideData);

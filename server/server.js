@@ -20,10 +20,7 @@ module.exports = function(opts) {
   }, opts || {});
 
   io.sockets.on('connection', function(socket) {
-    console.log('CONNECTION');
-
     socket.on('slidechanged', function(slideData) {
-      console.log('emitting');
       socket.broadcast.emit('slidedata', slideData);
     });
   });
@@ -32,7 +29,6 @@ module.exports = function(opts) {
     [ 'css', 'img', 'js', 'lib' ].forEach(function(dir) {
       app.use('/' + dir, staticDir(opts.baseDir + 'www/' + dir));
     });
-    // app.use(express.bodyParser());
   });
 
   app.get("/", function(req, res) {
