@@ -700,14 +700,7 @@ $margin: 16px;
 
     // Fires each time a new slide is activated
     Reveal.addEventListener( 'slidechanged', function( event ) {
-      var selector = '.slides > section:nth-child(' + (event.indexh + 1) + ')',
-          qs = document.querySelector;
-
-      if (event.indexv) {
-        selector += ' > section:nth-child(' + (event.indexv + 1) + ')';
-      }
-
-      handleCurrentSlide(document.querySelector(selector), event);
+      handleCurrentSlide(event.currentSlide, event);
     } );
 
     Reveal.initialize({
