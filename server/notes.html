@@ -77,7 +77,6 @@
     var nextSlide = document.getElementById('next-slide');
 
     socket.on('slidedata', function(data) {
-      console.log('got data', data);
       notes.innerHTML = data.notes;
       slides.contentWindow.Reveal.navigateTo(data.indexh, data.indexv);
       nextSlide.contentWindow.Reveal.navigateTo(data.nextindexh, data.nextindexv);
