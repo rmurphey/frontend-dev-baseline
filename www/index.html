@@ -668,6 +668,26 @@ $margin: 16px;
     var query = {};
     var socket = io.connect('http://localhost:1947');
 
+    socket.on('navigate', function(data) {
+      var dir = data.direction;
+      if (!dir) { return; }
+      var fn = 'navigate' + dir.charAt(0).toUpperCase() + dir.slice(1);
+
+      if (Reveal[fn]) {
+        Reveal[fn]();
+        return;
+      }
+
+      switch (dir) {
+        case 'home':
+          Reveal.navigateTo(0);
+          break;
+        case 'end':
+          Reveal.navigateTo(Number.MAX_VALUE);
+          break;
+      }
+    });
+
     var handleCurrentSlide = function(slideElement, event) {
       if (query.socketless) { return; }
 

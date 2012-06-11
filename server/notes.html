@@ -58,6 +58,12 @@
   </head>
 
   <body>
+    <div id="controls">
+      <button id="up">Up</button>
+      <button id="down">Down</button>
+      <button id="right">Right</button>
+      <button id="left">Left</button>
+    </div>
 
     <div id="wrap-slides">
       <iframe src="/?socketless=1" width="1280" height="1024" id="slides"></iframe>
@@ -81,6 +87,53 @@
       slides.contentWindow.Reveal.navigateTo(data.indexh, data.indexv);
       nextSlide.contentWindow.Reveal.navigateTo(data.nextindexh, data.nextindexv);
     });
+
+    document.addEventListener('keydown', onDocumentKeyDown);
+
+    [ 'up', 'down', 'left', 'right' ].forEach(function(dir){
+      document.getElementById(dir).addEventListener('click', (function(d) {
+        return function(e) {
+          e.preventDefault();
+          socket.emit('navigation', dir);
+        };
+      }(dir)));
+    });
+
+    /**
+     * Handler for the document level 'keydown' event.
+     * 
+     * @param {Object} event
+     */
+    function onDocumentKeyDown( event ) {
+      var dir;
+      var triggered = false;
+
+      if ( event.shiftKey || event.altKey || event.ctrlKey || event.metaKey ) return;
+          
+      switch( event.keyCode ) {
+        // p, page up
+        case 80: case 33: dir = 'prev'; triggered = true; break; 
+        // n, page down
+        case 78: case 34: dir = 'next'; triggered = true; break;
+        // h, left
+        case 72: case 37: dir = 'left'; triggered = true; break;
+        // l, right
+        case 76: case 39: dir = 'right'; triggered = true; break;
+        // k, up
+        case 75: case 38: dir = 'up'; triggered = true; break;
+        // j, down
+        case 74: case 40: dir = 'down'; triggered = true; break;
+        // home
+        case 36: dir = 'home'; triggered = true; break;
+        // end
+        case 35: dir = 'end'; triggered = true; break;
+      }
+
+      if ( triggered ) {
+        event.preventDefault();
+        socket.emit('navigation', dir);
+      }
+    }
     </script>
 
   </body>

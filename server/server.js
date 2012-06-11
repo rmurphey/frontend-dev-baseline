@@ -23,6 +23,10 @@ module.exports = function(opts) {
     socket.on('slidechanged', function(slideData) {
       socket.broadcast.emit('slidedata', slideData);
     });
+
+    socket.on('navigation', function(dir) {
+      socket.broadcast.emit('navigate', { direction : dir });
+    });
   });
 
   app.configure(function() {
