@@ -921,6 +921,8 @@ var Reveal = (function(){
 		navigateUp: navigateUp,
 		navigateDown: navigateDown,
 		toggleOverview: toggleOverview,
+		navigatePrev: navigatePrev,
+		navigateNext: navigateNext,
 
 		addEventListeners: addEventListeners,
 		removeEventListeners: removeEventListeners,
