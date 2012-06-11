@@ -58,13 +58,6 @@
   </head>
 
   <body>
-    <div id="controls">
-      <button id="up">Up</button>
-      <button id="down">Down</button>
-      <button id="right">Right</button>
-      <button id="left">Left</button>
-    </div>
-
     <div id="wrap-slides">
       <iframe src="/?socketless=1" width="1280" height="1024" id="slides"></iframe>
     </div>
@@ -88,16 +81,10 @@
       nextSlide.contentWindow.Reveal.navigateTo(data.nextindexh, data.nextindexv);
     });
 
+    nextSlide.contentWindow.onload = function() {
+      nextSlide.contentWindow.Reveal.navigateNext();
+    };
     document.addEventListener('keydown', onDocumentKeyDown);
-
-    [ 'up', 'down', 'left', 'right' ].forEach(function(dir){
-      document.getElementById(dir).addEventListener('click', (function(d) {
-        return function(e) {
-          e.preventDefault();
-          socket.emit('navigation', dir);
-        };
-      }(dir)));
-    });
 
     /**
      * Handler for the document level 'keydown' event.
