@@ -107,6 +107,7 @@ body #reveal .slides {
 #reveal em {
   color: hsl(329, 88%, 50%);
   font-style: normal;
+  font-weight: bold;
 }
 
 #reveal blockquote {
@@ -114,6 +115,7 @@ body #reveal .slides {
   line-height: 1.2em;
   padding: 40px;
   width: 85%;
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 #reveal cite {
