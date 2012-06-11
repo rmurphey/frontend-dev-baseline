@@ -14,14 +14,23 @@ var clients   = [];
 // http://weblog.bocoup.com/synchronizing-html5-slides-with-node-js/
 
 module.exports = function(opts) {
+  var currentState;
+
   opts = _.extend({
     port :      1947,
     baseDir :   './'
   }, opts || {});
 
   io.sockets.on('connection', function(socket) {
+    socket.on('ping', function() {
+      if (currentState) {
+        socket.emit('slidedata', currentState);
+      }
+    });
+
     socket.on('slidechanged', function(slideData) {
-      socket.broadcast.emit('slidedata', slideData);
+      currentState = slideData;
+      socket.broadcast.emit('slidedata', currentState);
     });
 
     socket.on('navigation', function(dir) {

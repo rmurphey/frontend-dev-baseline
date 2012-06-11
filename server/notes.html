@@ -81,9 +81,17 @@
       nextSlide.contentWindow.Reveal.navigateTo(data.nextindexh, data.nextindexv);
     });
 
+    slides.contentWindow.onload = onLoad;
+    nextSlide.contentWindow.onload = onLoad;
+
+    function onLoad() {
+      socket.emit('ping');
+    }
+
     nextSlide.contentWindow.onload = function() {
       nextSlide.contentWindow.Reveal.navigateNext();
     };
+
     document.addEventListener('keydown', onDocumentKeyDown);
 
     /**
