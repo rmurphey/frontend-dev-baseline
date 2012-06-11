@@ -65,7 +65,6 @@ body #reveal .slides {
 }
 
 body #reveal .oneliner em {
-  text-transform : uppercase;
   font-weight : bold;
 }
 
@@ -74,7 +73,7 @@ body #reveal .slides {
   font-weight: 300;
 }
 
-#reveal h1, 
+#reveal h1,
 #reveal h2,
 #reveal h3,
 #reveal h4 {
@@ -123,7 +122,7 @@ body #reveal .slides {
   font-weight: 400;
 }
 
-#reveal p + h2, 
+#reveal p + h2,
 #reveal p + h3 {
   margin-top: 80px;
 }
