@@ -9,9 +9,9 @@ html {
 }
 
 body #reveal .slides {
-  width : 1024px;
-  margin-left : -512px;
-  margin-top: -350px;
+  width : 960px;
+  margin-left : -480px;
+  margin-top: -400px;
   text-align: left;
 
   /* changing the speeds */
