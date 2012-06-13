@@ -52,7 +52,7 @@
           </section>
 
           <section class="centered" data-markdown>
-            <iframe src="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/" width="1024" height="700"></iframe>
+            <iframe src="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/" width="960" height="700"></iframe>
 
             <aside class="notes">
               want to talk about a post i wrote a while back about a “new baseline for front-end devs”
@@ -83,7 +83,7 @@
           </section>
 
           <section data-markdown>
-            <iframe style="background-color: white" src="http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/" width="1024" height="600"></iframe>
+            <iframe style="background-color: white" src="http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/" width="960" height="600"></iframe>
 
             [An Objective Look at Table-Based vs CSS-Based Design](http://www.andybudd.com/archives/2004/05/an_objective_look_at_table_based_vs_css_based_design/)
 
@@ -104,7 +104,7 @@
           </section>
 
           <section class="centered">
-            <iframe src="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications" width="1024" height="600"></iframe>
+            <iframe src="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications" width="960" height="600"></iframe>
 
             <aside class="notes">
               In 2005, we got a name for these technologies that were letting us move more and more of our development energy to the browser.
@@ -212,7 +212,7 @@
             ## you should know
 
             jQuery-less JavaScript, prototypal inheritance,
-            Backbone/MV* basics
+            closures & function scope, MV* basics
           </section>
 
           <section data-markdown>
@@ -250,11 +250,17 @@ it("you should be able to add an item to the end of an array", function() {
             </pre>
           </section>
 
-          <section class="centered">
+          <section class="centered" data-markdown>
             <a href="http://eloquentjavascript.net"><img src="img/ejs.png" width="200" class="book book-1 clean"></a>
             <a href="http://shop.oreilly.com/product/9780596517748.do?sortby=bestSellers"><img src="img/javascript-the-good-parts.jpg" width="200" class="book book-2 clean"></a>
             <a href="http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate"><img src="img/javascript-patterns.jpg" width="200" class="book book-3 clean"></a>
             <a href="http://shop.oreilly.com/product/0636920025245.do?sortby=publicationDate"><img src="img/maintainable-javascript.jpg" width="200" class="book book-4 clean"></a>
+
+            <aside class="notes">
+              Left to right, these are short books very much worth reading. JS Patterns
+              especially was transformative for me and helped me "level up" my JavaScript
+              (and gave me names for patterns I didn't know had names).
+            </aside>
           </section>
         </section>
 
@@ -270,14 +276,38 @@ it("you should be able to add an item to the end of an array", function() {
             ## you should know
 
             collaboration workflow, pull requests, code reviews
+
+            <aside class="notes">
+              Most open-source projects of interest to front-end devs make their home
+              on Github. 
+
+              If you want to participate, if you want to understand how something came
+              to be the way it is, if you want to contribute or just see the sausage
+              being made, you need to know your way around.
+
+              Of course, more internal projects are using Github too -- it turns out it's
+              a great way to collaborate on software.
+            </aside>
           </section>
 
-          <section class="centered">
+          <section class="centered" data-markdown>
             <img src="img/git-workflow.png" height="600" alt="git workflow" class="clean">
+            <aside class="notes">
+              Understand the git branching model and understand how a particular project
+              approaches branching.
+
+              I remember the first time I saw this diagram and I was pretty puzzled, but
+              learning to use development or "feature" branches is pretty key to getting the 
+              most out of git -- and to contributing to open-source projects.
+            </aside>
           </section>
 
-          <section class="centered">
-            <img src="img/pull-requests.png" height="600" alt="pull requests"  class="clean">
+          <section>
+            <img src="img/tower.png" height="600" alt="Tower" class="clean">
+
+            <aside class="notes">
+              If you need training wheels, apps like Tower or Github for Mac are great, but
+            </aside>
           </section>
         </section>
 
@@ -298,7 +328,36 @@ it("you should be able to add an item to the end of an array", function() {
           </section>
 
           <section>
-            <iframe src="http://requirejs.org" width="1024" height="700"></iframe>
+            <iframe src="http://requirejs.org" width="960" height="700"></iframe>
+
+            <aside class="notes">
+              RequireJS lets you write modular code and then build it for production.
+
+              Module loading in dev happens async, so it doesn't slow you down.
+
+              In prod, use built files, but continue to load pieces async
+              if you'd like.
+            </aside>
+          </section>
+
+          <section data-markdown>
+            <pre>
+              <code class="javascript">
+define([ 'jquery', 'underscore' ], function($, _) {
+  return {
+    placeAt : function(data, templateString, node) {
+      $(node).html(_.template(templateString, data));
+    }
+  };
+});
+              </code>
+            </pre>
+
+            A module using AMD; specify dependencies, return an object
+
+            <aside class="notes">
+              Dependency management is taken care of for you, too
+            </aside>
           </section>
 
           <section data-markdown>
@@ -320,7 +379,7 @@ require.config({
 
   shim: {
     backbone: {
-      deps: ["lodash", "jquery"],
+      deps: [ "lodash", "jquery" ],
       exports: "Backbone"
     }
   }
@@ -329,10 +388,19 @@ require.config({
             </pre>
 
             The RequireJS config from [Backbone Boilerplate](https://github.com/tbranyen/backbone-boilerplate)
+
+            <aside class="notes">
+              Tell Require where to find dependencies, and "shim" libraries like
+              Backbone and Underscore that don't support AMD out of the box.
+            </aside>
           </section>
 
           <section class="oneliner centered" data-markdown>
             `r.js -o your.build.js`
+
+            <aside class="notes">
+              For production, run r.js and pass it your instructions.
+            </aside>
           </section>
 
           <section data-markdown>
@@ -341,6 +409,11 @@ require.config({
             <p class="centered">
               <img src="img/unbuilt.png" width="800" class="clean">
             </p>
+
+            <aside class="notes">
+              You can keep your dev environment sane and modular with lots
+              of small files that don't pollute the global namespace ...
+            </aside>
           </section>
 
           <section data-markdown>
@@ -349,6 +422,10 @@ require.config({
             <p class="centered">
               <img src="img/built.png" width="800" class="clean">
             </p>
+
+            <aside class="notes">
+              ... and consolidate it all into a handful of requests for production
+            </aside>
           </section>
         </section>
 
@@ -370,23 +447,46 @@ require.config({
 
           <section data-markdown>
             <div class="centered">
-              <iframe width="1024" height="480" src="http://www.youtube.com/embed/nOEw9iiopwI" frameborder="0" allowfullscreen></iframe>
+              <iframe width="960" height="480" src="http://www.youtube.com/embed/nOEw9iiopwI" frameborder="0" allowfullscreen></iframe>
             </div>
 
             [Chrome Developer Tools: 12 Tricks](http://www.youtube.com/embed/nOEw9iiopwI)
 
+            <aside class="notes">
+              Paul Irish has some *great* YouTube videos about getting the most 
+              out of Chrome dev tools.
+            </aside>
           </section>
 
           <section data-markdown>
-            <iframe width="1024" height="600" src="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints"></iframe>
+            <iframe width="960" height="600" src="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints"></iframe>
 
             [Chrome Developer Tools Docs: Breakpoints](https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints)
+
+            [Fixing These jQuery](http://fixingthesejquery.com)
+
+            <aside class="notes">
+              There are also great docs about using breakpoints.
+
+              BTW, Fixing these jQuery from Adam Sontag -- if you haven't seen this, it is an amazing
+              resource for improving your debugging skills (or helping someone
+              improve theirs).
+            </aside>
           </section>
 
           <section data-markdown>
-            <iframe width="1024" height="600" src="http://my.opera.com/dragonfly/blog/" frameborder="0" allowfullscreen></iframe>
+            <iframe width="960" height="600" src="http://my.opera.com/dragonfly/blog/" frameborder="0" allowfullscreen></iframe>
 
             [Opera Dragonfly](http://my.opera.com/dragonfly/blog/)
+
+            <aside class="notes">
+              Chrome is the browser most devs are using for debugging these days,
+              but Opera and other browsers still have great things to offer for
+              specific needs -- Opera, for example, has some great color palette 
+              management stuff if you're designing in the browser. 
+
+              Which of course you are, right? 
+            </aside>
           </section>
         </section>
 
@@ -395,19 +495,6 @@ require.config({
           <section data-markdown>
             # command line
 
-            <blockquote>Is it <em>unreasonable to ask for a GUI</em>
-              so that whatever I’m doing works like all
-              the other programs I use all day?</blockquote>
-            <cite>Dark_Prism on Reddit</cite>
-
-            <blockquote>Now you can berate me for not understanding
-              the Terminal if you like, but I’ll trade your rubygems
-              for my under-colour removal and dot gain, any day
-              of the week. <em>How hard should this be?</em></blockquote>
-            <cite>Andy Clarke, author of “Hardboiled Web Design”</cite>
-          </section>
-
-          <section data-markdown>
             ## you already know
 
             either the command line is amazing,
@@ -417,10 +504,55 @@ require.config({
 
             ack, ssh, find, curl, git, npm;
             creating aliases for commonly used commands
+
+            <aside class="notes">
+              This is probably the rant-iest section of this talk. If we're to
+              call ourselves developers, we can't be afraid of the command line, 
+              and yet ...
+            </aside>
+          </section>
+
+          <section>
+            <blockquote>Is it <em>unreasonable to ask for a GUI</em>
+              so that whatever I’m doing works like all
+              the other programs I use all day?</blockquote>
+            <cite>Dark_Prism on Reddit</cite>
+          </section>
+
+          <section class="oneliner">
+            <h2>YES.</h2>
+          </section>
+
+          <section>
+            <blockquote>Now you can berate me for not understanding
+              the Terminal if you like, but I’ll trade your rubygems
+              for my under-colour removal and dot gain, any day
+              of the week. <em>How hard should this be?</em></blockquote>
+            <cite>Andy Clarke, author of “Hardboiled Web Design”</cite>
+          </section>
+
+          <section class="oneliner">
+            <h2>IT’S NOT HARD IF YOU TRY.</h2>
           </section>
 
           <section data-markdown class="centered">
-            <a href="https://github.com/gf3/dotfiles/"><img src="img/dotfiles.png" width="1024" class="clean"></a>
+            <a href="https://github.com/gf3/dotfiles/"><img src="img/dotfiles.png" width="960" class="clean"></a>
+
+            <aside class="notes">
+              Our friend Gianni Chiappetta -- gf3 -- has meticulously curated "dotfiles".
+              Take a look and be tantalized by what you could be doing with the command line.
+            </aside>
+          </section>
+
+          <section data-markdown>
+            ## tools you can use
+
+            - `ack`: Smarter-than-`grep` search for text within files in a directory
+            - `find`: Locate files whose names match a pattern. Bonus points:
+              use the files as the arguments to a `sed` command
+            - `curl`: test the behavior of a data API
+            - `npm` and `gem`: a universe of usefulness
+
           </section>
         </section>
 
@@ -438,10 +570,12 @@ require.config({
 
             various templating libraries & tradeoffs,  
             the RequireJS `text!` plugin
+
+            <small>* This is less true in modern browsers!</small>
           </section>
 
           <section data-markdown>
-            <iframe src="http://garann.github.com/template-chooser/" width="1024" height="600"></iframe>
+            <iframe src="http://garann.github.com/template-chooser/" width="960" height="600"></iframe>
 
             [Garann Means’ Template Engine Chooser](http://garann.github.com/template-chooser/)
           </section>
@@ -450,44 +584,23 @@ require.config({
             <pre class="thin">
               <code class="javascript">
 define([
-  'use!underscore',
   'views/base',
   <span class="code-highlight">'text!views/templates/searchForm.html'</span>
-], function(_, View, tpl) {
+], function(View, tpl) {
   return View.extend({
     template : tpl,
 
-    prepare : function() {
-      _.bindAll(this, 'release', '_onSearch', '_disable');
-    },
-
-    events : {
-      'submit .search-form' :  '_onSearch'
-    },
-
-    _onSearch : function(e) {
-      e.preventDefault();
-      if (this.disabled) { return; }
-
-      var term = $.trim(this.$('.js-input').val());
-      if (!term) { return; }
-      this._disable();
-      this.trigger('search', term);
-    },
-
-    release : function() {
-      this.disabled = false;
-      this.$('.js-submit').removeAttr('disabled');
-    },
-
-    _disable : function() {
-      this.disabled = true;
-      this.$('.js-submit').attr('disabled', true);
-    }
+    // ...
   });
 });
               </code>
             </pre>
+
+            - [More about RequireJS and templates]()
+
+            <aside class="notes">
+              BTW, you can use Require to manage text dependencies, too
+            </aside>
           </section>
         </section>
 
@@ -498,14 +611,13 @@ define([
 
             ## you already know
 
-            that CSS is difficult to maintain,
-            that you should be modularizing your CSS,
-            that you should combine & minify CSS for production
+            CSS doesn't have variables but it should; 
+            OOCSS helps a little; optimize everything else
+            before you optimize CSS selector perf
 
             ## you should know
 
-            SASS, Stylus, and/or LESS;
-            RequireJS  for plain CSS optimization
+            SASS, Stylus, and/or LESS
           </section>
 
           <section data-markdown>
@@ -547,11 +659,11 @@ $margin: 16px;
               </code>
             </pre>
 
-            [Sass](http://sass-lang.com/)
+            [SASS](http://sass-lang.com/)
           </section>
 
           <section data-markdown>
-            <iframe src="http://lesscss.org/" width="1024" height="600"></iframe>
+            <iframe src="http://lesscss.org/" width="960" height="600"></iframe>
             <div class="oval-marker fragment">This is a lie</div>
 
             [LESS](http://lesscss.org/)
@@ -575,13 +687,22 @@ $margin: 16px;
           </section>
 
           <section data-markdown>
-            <iframe src="http://visionmedia.github.com/mocha/" width="1024" height="600" style="background-color:white"></iframe>
+            <iframe src="http://visionmedia.github.com/mocha/" width="960" height="600" style="background-color:white"></iframe>
 
             [Mocha](http://visionmedia.github.com/mocha/)
+
+            <aside class="notes">
+              Mocha works well in a Node stack because it can be used for testing 
+              client and server code; browser runner is trivial to set up.
+
+              In a Ruby stack, you might prefer Jasmine.
+
+              Or you might prefer QUnit. I really don't care. TEST.
+            </aside>
           </section>
 
           <section data-markdown>
-            <iframe src="http://szafranek.net/works/articles/javascript-unit-testing/" width="1024" height="600"></iframe>
+            <iframe src="http://szafranek.net/works/articles/javascript-unit-testing/" width="960" height="600"></iframe>
 
             [Getting Started with JS Unit Testing](http://szafranek.net/works/articles/javascript-unit-testing/)
           </section>
@@ -607,7 +728,7 @@ $margin: 16px;
           </section>
 
           <section data-markdown>
-            <iframe src="http://www.jshint.com/options/" width="1024" height="600"></iframe>
+            <iframe src="http://www.jshint.com/options/" width="960" height="600"></iframe>
             [JSHint](http://www.jshint.com/options/)
           </section>
         </section>
@@ -616,10 +737,28 @@ $margin: 16px;
         <section>
           <section data-markdown>
             # automation
+
+            ## you already know
+
+            there are an awful lot of things that you do all the time
+
+            ## you should know
+
+            tools like grunt, rake, ant can simplify your life
           </section>
 
-          <section>
-            <iframe src="https://github.com/cowboy/grunt" width="1024" height="600"></iframe>
+          <section data-markdown>
+            <iframe src="https://github.com/cowboy/grunt" width="960" height="600"></iframe>
+
+            [Grunt](https://github.com/cowboy/grunt)
+
+            <aside class="notes">
+              Grunt comes with built-in tools for common tasks like minification, testing,
+              RequireJS builds, and more. 
+            </aside>
+          </section>
+
+          <section data-markdown>
           </section>
         </section>
 
@@ -630,7 +769,7 @@ $margin: 16px;
 
             ## you already know
 
-            [w3schools.com](http://www.dailymotion.com/video/xsdji_rick-astley-never-gonna-give-you-up_music) is abhorrent
+            [w3schools.com](http://dai.ly/MB95Ww) is abhorrent
 
             ## you should know
 
@@ -647,7 +786,7 @@ $margin: 16px;
               a good programmer, he or she must be <br>
               <em>incredibly unlazy when it comes <br>
                 to learning how to stay lazy.</em></blockquote>
-            <cite>Paraphrased from Philipp Lenssen,  “Why Good Programmers are Lazy and Dumb”</cite>
+            <cite>Paraphrased from Philipp Lenssen,  “[Why Good Programmers are Lazy and Dumb](http://blogoscoped.com/archive/2005-08-24-n14.html)”</cite>
           </section>
         </section>
 
@@ -683,7 +822,7 @@ $margin: 16px;
 
     <script>
     var query = {};
-    var socket = io.connect('http://localhost:1947');
+    var socket = io.connect(window.location.origin);
 
     socket.on('navigate', function(data) {
       var dir = data.direction;

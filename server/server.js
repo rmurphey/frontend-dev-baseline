@@ -17,7 +17,6 @@ module.exports = function(opts) {
   var currentState;
 
   opts = _.extend({
-    port :      1947,
     baseDir :   './'
   }, opts || {});
 
